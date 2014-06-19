@@ -1,0 +1,66 @@
+/*** board ***/
+.square{
+	width: 75px;
+	height: 75px;
+}
+.white.square{
+	background-color: white;
+}
+.black.square{
+	background-color: silver;
+}
+.highlight{
+	box-shadow: 0px 0px 10px 3px blue inset;
+	cursor: pointer;
+}
+.highlight-x{
+	box-shadow: 0px 0px 10px 3px red inset;
+	cursor: pointer;
+}
+
+/*** pieces ***/
+.piece{
+	font-size: 55px;
+	font-family: 'Arial Unicode MS';
+	position: absolute;
+	text-align:center;
+	width: 75px;
+	height: 75px;
+	cursor: pointer;
+}
+.white.king:before{
+	content:'\2654';
+}
+.white.queen:before{
+	content:'\2655';
+}
+.white.rook:before{
+	content:'\2656';
+}
+.white.bishop:before{
+	content:'\2657';
+}
+.white.knight:before{
+	content:'\2658';
+}
+.white.pawn:before{
+	content:'\2659';
+}
+.black.king:before{
+	content:'\265A';
+}
+.black.queen:before{
+	content:'\265B';
+}
+.black.rook:before{
+	content:'\265C';
+}
+.black.bishop:before{
+	content:'\265D';
+}
+.black.knight:before{
+	content:'\265E';
+}
+.black.pawn:before{
+	content:'\265F';
+}
