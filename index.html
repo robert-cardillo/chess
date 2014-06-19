@@ -3,27 +3,28 @@
 	<link rel="stylesheet" href="css/bootstrap.3.1.1.min.css" type="text/css"/>
 	<link rel="stylesheet" href="css/chess.css" type="text/css"/>
 </head>
-<body>
+<body class="well">
 	<!-- ***** -->
-	<div style="border: 1px solid black; width:600px; height:600px; margin: auto; position:relative">
-		<div style="position:absolute; left:0px; top:0px; width:75px; height:75px; z-index:-100" class="black square"></div>
-		<div id="promote" style="left:0px; top:0px;" class="piece black rook"></div>
+	<div class="board">
+		<div style="left:0px; top:0px;" class="black square"></div>
+		<div style="left:0px; top:0px;" class="piece black rook"></div>
 		
-		<div style="position:absolute; left:150px; top:0px; width:75px; height:75px; z-index:-100" class="black square"></div>
-		<div id="promote" style="left:150px; top:0px;" class="piece black knight"></div>
+		<div style="left:150px; top:0px;" class="black square"></div>
+		<div style="left:150px; top:0px;" class="piece black knight"></div>
 		
-		<div style="position:absolute; left:300px; top:0px; width:75px; height:75px; z-index:-100" class="black square"></div>
-		<div id="promote" style="left:300px; top:0px;" class="piece black bishop"></div>
+		<div style="left:300px; top:0px;" class="black square"></div>
+		<div style="left:300px; top:0px;" class="piece black bishop"></div>
 		
-		<div style="position:absolute; left:450px; top:0px; width:75px; height:75px; z-index:-100" class="black square"></div>
+		<div style="left:450px; top:0px;" class="black square"></div>
 		<div id="promote" style="left:450px; top:0px;" class="piece black pawn"></div>
 		
-		<div style="position:absolute; left:150px; top:150px; width:75px; height:75px; z-index:-100" class="black square"></div>
-		<div id="promote" style="left:150px; top:150px;" class="piece black king"></div>
+		<div style="left:150px; top:150px;" class="black square"></div>
+		<div style="left:150px; top:150px;" class="piece black king"></div>
 		
-		<div style="position:absolute; left:300px; top:150px; width:75px; height:75px; z-index:-100" class="black square highlight-x"></div>
-		<div id="promote" style="left:300px; top:150px;" class="piece black queen"></div>
+		<div style="left:300px; top:150px;" class="black square highlight-x"></div>
+		<div style="left:300px; top:150px;" class="piece black queen"></div>
 	</div>
+	<div class="square black highlight-x"></div>
 	<!-- ***** -->
 	<script type="text/javascript" src="js/jquery.1.11.1.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.3.1.1.min.js"></script>
