@@ -1,49 +1,65 @@
-///<reference path="jquery.d.ts"/>
-var Chess = (function () {
-    function Chess() {
-        this.PIXEL_SCALE = 75;
-        this.isWhite = true;
-    }
-    Chess.prototype.initBoard = function ($board) {
-        var pieces = ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'];
+var app = (function () {
+	// local copy of app object
+	var app;
 
-        $board.empty();
+	// private members
+	var PIXEL_SCALE = 75;
+	var isWhite = true;
+	var whiteKingMoved = false;
+	var blackKingMoved = false;
+	var whiteEnPassantable = [];
+	var blackEnPassantable = [];
 
-        for (var i = 0; i < 8; i++) {
-            for (var j = 0; j < 8; j++) {
-                var left = i * this.PIXEL_SCALE + 'px';
-                var top = j * this.PIXEL_SCALE + 'px';
+	function initBoard($board) {
+		var pieces = ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'];
 
-                $('<div/>', {
-                    'class': ((i + j) % 2 == 1 ? 'black' : 'white') + ' square'
-                }).css({
-                    'left': left,
-                    'top': top
-                }).appendTo($board);
+		$board.empty();
 
-                if (j == 0 || j == 7) {
-                    $('<div/>', {
-                        'class': 'piece ' + (j == 0 ? 'black' : 'white') + ' ' + pieces[i]
-                    }).css({
-                        'left': left,
-                        'top': top
-                    }).appendTo($board);
-                }
+		for (var i = 0; i < 8; i++) {
+			for (var j = 0; j < 8; j++) {
+				var left = i * PIXEL_SCALE + 'px';
+				var top = j * PIXEL_SCALE + 'px';
 
-                if (j == 1 || j == 6) {
-                    $('<div/>', {
-                        'class': 'piece ' + (j == 1 ? 'black' : 'white') + ' pawn'
-                    }).css({
-                        'left': left,
-                        'top': top
-                    }).appendTo($board);
-                }
-            }
-        }
-    };
-    return Chess;
-})();
+				$('<div/>', {
+					'class' : ((i + j) % 2 == 1 ? 'black' : 'white') + ' square'
+				})
+				.css({
+					'left' : left,
+					'top' : top
+				})
+				.appendTo($board);
 
-var app = new Chess();
+				if (j == 0 || j == 7) {
+					$('<div/>', {
+						'class' : 'piece ' + (j == 0 ? 'black' : 'white') + ' ' + pieces[i]
+					})
+					.css({
+						'left' : left,
+						'top' : top
+					})
+					.appendTo($board);
+				}
+
+				if (j == 1 || j == 6) {
+					$('<div/>', {
+						'class' : 'piece ' + (j == 1 ? 'black' : 'white') + ' pawn'
+					})
+					.css({
+						'left' : left,
+						'top' : top
+					})
+					.appendTo($board);
+				}
+			}
+		}
+	}
+	
+	// public export
+	app = {
+		initBoard : initBoard
+	};
+
+	return app;
+}());
 
 app.initBoard($('#board'));
